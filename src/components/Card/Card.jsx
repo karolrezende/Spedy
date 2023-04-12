@@ -1,11 +1,13 @@
 import React from 'react'
-
+import styles from './styles.module.scss'
 export default function Card({item}) {
   return (
-    <div>
-        <h3>{item.title}</h3>
-        <span>{item.date}</span>
-        <p>{item.desc}</p>
-    </div>
+    <main>
+      <div className={styles.card}>
+          <h3 className={styles.card_title}>{item.title}</h3>
+          <span className={styles.card_date}>{item.date}</span>
+          <p className={styles.card_desc}>{item.desc}</p>
+      </div>
+    </main>
   )
 }
