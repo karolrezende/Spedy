@@ -2,13 +2,11 @@ import { useState } from "react"
 import RenderList from "./components/RenderList/RenderList"
 import styles from './styles.module.scss'
 import Modal from "./components/Modal/Modal"
+
 function App() {
   const [active, setActive] = useState(false)
-  const date = new Date().toLocaleDateString();
-
   function isActive(){
     setActive(true)
-    console.log(active)
   }
   return (
     <div className={styles.main}>

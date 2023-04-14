@@ -7,10 +7,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(90, 90, 90, 0.062);
+    background: rgba(77, 77, 77, 0.445);
     &_main{
         margin: 0 auto;
-        background-color:  #dadada;
+        background-color:  #ffffff;
         width: 400px;
         height: 300px;
         border-radius: 8px;
@@ -21,7 +21,7 @@
             h2{
                 color: #797979;
             }
-            button{
+            button{     
                 width: 35px;
                 border-radius: 16px;
                 border: none;
