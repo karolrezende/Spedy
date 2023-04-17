@@ -4,10 +4,19 @@ import Card from '../Card/Card'
 import styles from './styles.module.scss'
 
 export default function RenderList() {
-    const myUser = JSON.parse(localStorage.getItem('user'))    
+    let myUser = []
+    if(localStorage.hasOwnProperty('users')){
+        myUser = JSON.parse(localStorage.getItem('users'))    
+        
+    }
     return (
         <div className={styles.container}>
             {list.map(item=> <Card item={item}/> )}
+            {myUser !== undefined ?  myUser.map(user=> {
+                if(user != null){
+                    <Card item={user}/>
+                }
+            }) : ''}
         </div>
     )
 }

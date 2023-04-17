@@ -6,43 +6,39 @@ export default function Modal({setActive}) {
   const [user, setUser] = useState([])
   const [nowUser, setNowUser] = useState([])
   const [title, setTitle] = useState('')
+  const [desc, setDesc] = useState('') 
   const [clean, setClean] = useState('')
-  const oldItems = JSON.parse(localStorage.getItem('user'))
+
+  let oldItems = []
   let id = 0 ;
-  const [desc, setDesc] = useState('')
   function isActive(){
     setActive(false)
   }
 
   function handleClick(){
-    id = nowUser.id+id
-    console.log(nowUser.id)
-    if(title !='' && desc != '' ){
-      console.log(title, nowUser)
+    if(title != '' && desc != ''){
       setNowUser([{
-        id, 
         title,
         date,
         desc
       }])
-      setUser([...user, nowUser])
-      //console.log(oldItems)
-        if(oldItems != null){
-          setUser([...oldItems])
-        }
-      user.map(us=>{
-      if(us !== []){
-        localStorage.setItem('user', JSON.stringify(user))
-    }
-      })
-    }
-    else{
-      console.log('ois')
+      if(localStorage.hasOwnProperty('users')){
+        const users = JSON.parse(localStorage.getItem('users'))
+        localStorage.setItem('users', JSON.stringify([...users, nowUser]))
+      }else{
+        localStorage.setItem('users', JSON.stringify(nowUser))
+      }
+      
     }
   }
+
+  // const useres = JSON.parse(localStorage.getItem('users'))
+  // console.log(useres)
+
   function handleSubmit(event){
     event.preventDefault()
   }
+
   return (
     <div className={styles.modal}>
       <div className={styles.modal_main}>
