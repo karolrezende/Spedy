@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 
 export default function Modal({setActive}) {
   const date = new Date().toLocaleDateString();
   const [user, setUser] = useState([])
-  const [nowUser, setNowUser] = useState([])
+  const [nowUser, setNowUser] = useState({})
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('') 
   const [clean, setClean] = useState('')
@@ -14,26 +14,24 @@ export default function Modal({setActive}) {
   function isActive(){
     setActive(false)
   }
-
+  
   function handleClick(){
     if(title != '' && desc != ''){
-      setNowUser([{
-        title,
-        date,
-        desc
-      }])
+      useEffect(()=>{
+        setNowUser({
+          title,
+          date,
+          desc
+        })
+    
       if(localStorage.hasOwnProperty('users')){
         const users = JSON.parse(localStorage.getItem('users'))
         localStorage.setItem('users', JSON.stringify([...users, nowUser]))
       }else{
-        localStorage.setItem('users', JSON.stringify(nowUser))
-      }
-      
-    }
+        localStorage.setItem('users', JSON.stringify([nowUser]))
+      }  
+    }, [nowUser])  
   }
-
-  // const useres = JSON.parse(localStorage.getItem('users'))
-  // console.log(useres)
 
   function handleSubmit(event){
     event.preventDefault()
