@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
 export default function Card({item}) {
-
   return (
     <main>
       <div className={styles.card}>

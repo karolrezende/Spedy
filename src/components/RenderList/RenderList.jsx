@@ -10,9 +10,9 @@ export default function RenderList() {
     }
     return (
         <div className={styles.container}>
-            {list.map(item=> <Card item={item}/> )}
+            {list.map(item=> <Card key={item.id} item={item}/> )}
             
-            {myUser !== undefined ?  myUser.map(item=> <Card item={item}/>) : ''}
+            {myUser !== undefined ?  myUser.map(item=> <Card key={item.id}item={item}/>) : ''}
         </div>
     )
 }
