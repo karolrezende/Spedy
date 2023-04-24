@@ -8,7 +8,6 @@ export default function Modal({setActive}) {
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('')
   const [modal, setModal] = useState(false)
-  const clean = ''
   function isActive(){
     setActive(false)
   }
@@ -31,9 +30,13 @@ export default function Modal({setActive}) {
         date,
         desc
       })
-     
+      setModal(true)
+      setInterval(() => {
+        setModal(false)
+      }, 1000);
     }
   }
+
   function cleanner(){
    setTitle('')
    setDesc('')
@@ -45,7 +48,7 @@ export default function Modal({setActive}) {
   return (
     <div className={styles.modal}>
       <div className={styles.modal_main}>
-        <Toastify/>
+        {modal ? <Toastify/> : ''}
         <div className={styles.modal_main_header}>
           <h2>Criar um classificado</h2>
           <button onClick={()=> isActive()}>X</button>

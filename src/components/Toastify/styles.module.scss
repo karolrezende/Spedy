@@ -1,5 +1,57 @@
 .modal{
-    width: 20px;
-    height: 20px;
+    width: 250px;
+    height: 75px;
     position: absolute;
+    top: 80px;
+    right: 30px;
+    animation: animation 1s;
+    display: block;
+    &_main{
+        width: 250px;
+        height: 75px;
+        background-color: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img, p{
+            margin: 0.5em 0 0.5em 1em;
+        }
+    }
+}
+
+@keyframes animation {
+    0%{
+        opacity: 10%;
+    }
+    10%{
+        opacity: 20%;
+    }
+    20%{
+        opacity: 50%;
+    }
+    30%{
+        opacity: 70%;
+    }
+    40%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 100%;
+    }
+    60%{
+        opacity: 100%;
+    }
+    70%{
+        opacity: 100%;
+    }
+    80%{
+        opacity: 100%;
+    }
+    90%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 100%;
+    }
 }
