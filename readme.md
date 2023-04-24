@@ -2,8 +2,8 @@
 🎉 Projeto desafio para empresa Spedy
 
 
-## Tecnologia utilizada: 
-✨ React
+## Tecnologias utilizada: 
+✨ React, sass
 
 ## Vercel
 🧸 https://spedy.vercel.app/
