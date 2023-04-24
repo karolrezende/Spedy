@@ -2,6 +2,7 @@ import { useState } from "react"
 import RenderList from "./components/RenderList/RenderList"
 import styles from './styles.module.scss'
 import Modal from "./components/Modal/Modal"
+import Classif from "./components/Classif/Classif"
 
 function App() {
   const [active, setActive] = useState(false)
@@ -16,6 +17,7 @@ function App() {
       </div>
       <RenderList/>
       {active ? <Modal setActive={setActive}/> : ''}
+      <Classif/>
     </div>
   )
 }
